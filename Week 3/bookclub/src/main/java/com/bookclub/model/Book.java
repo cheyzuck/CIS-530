@@ -13,12 +13,12 @@ public class Book {
 
     }
 
-    public Book(String isbn, String title, String description, int numOfPages, List<String> authors){
-        isbn = isbn;
-        title = title;
-        description = tescription;
-        numOfPages = numOfPages;
-        authors = authors;
+    public Book(String Isbn, String Title, String Description, int NumOfPages, List<String> Authors){
+        isbn = Isbn;
+        title = Title;
+        description = Description;
+        numOfPages = NumOfPages;
+        authors = Authors;
     }
 
     public String getIsbn(){
