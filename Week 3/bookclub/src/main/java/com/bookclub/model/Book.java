@@ -13,12 +13,12 @@ public class Book {
 
     }
 
-    public Book(String Isbn, String Title, String Description, int NumOfPages, List<String> Authors){
-        String isbn = Isbn;
-        String title = Title;
-        String description = Description;
-        int numOfPages = NumOfPages;
-        List<String> authors = Authors;
+    public Book(String isbn, String title, String description, int numOfPages, List<String> authors){
+        isbn = isbn;
+        title = title;
+        description = tescription;
+        numOfPages = numOfPages;
+        authors = authors;
     }
 
     public String getIsbn(){
@@ -63,6 +63,8 @@ public class Book {
 
     @Override
     public String toString(){
-        return "Book{isbn=<isbnValue>, title=<titleValue>, description=<descriptionValue>, numOfPages=<numOfPagesValue, authors=<authorsValue>}";
+        String template = "Book{isbn=%s, title=%s, description=%s, numOfPages=%s, authors=%s}";
+        String output = String.format(template, getIsbn(), getTitle(), getDescription(), getNumOfPages(), getAuthors().toString());
+        return output;
     }
 }
