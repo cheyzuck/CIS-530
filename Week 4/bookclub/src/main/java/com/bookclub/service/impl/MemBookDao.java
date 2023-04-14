@@ -3,10 +3,13 @@ package com.bookclub.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.bookclub.model.Book;
 import com.bookclub.service.dao.BookDao;
 
 public class MemBookDao implements BookDao{
+    @Autowired
     private List<Book> books;
 
     public MemBookDao(){
@@ -30,7 +33,7 @@ public class MemBookDao implements BookDao{
 
     @Override
     public Book find(String key) {
-        for (Book book: this.books) {
+        for (Book book : this.books) {
             if (book.getIsbn().equals(key)) {
                 return book;
             }

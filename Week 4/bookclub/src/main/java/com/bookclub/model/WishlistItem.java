@@ -1,13 +1,15 @@
 package com.bookclub.model;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+
+
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 public class WishlistItem {
-    @NonNull
+    @NotNull
     @NotEmpty(message="ISBN is a required field.")
     private String isbn;
-    @NonNull
+    @NotNull
     @NotEmpty(message="Title is a required field.")
     private String title;
 
@@ -16,7 +18,8 @@ public class WishlistItem {
     }
 
     public WishlistItem(String isbn, String title){
-
+        setIsbn(isbn);
+        setTitle(title);
     }
 
     public String getIsbn(){

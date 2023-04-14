@@ -8,17 +8,16 @@ public class Book {
     private String description;
     private int numOfPages;
     private List<String> authors;
-    
-    public Book(){
 
+    public Book(){
     }
 
-    public Book(String Isbn, String Title, String Description, int NumOfPages, List<String> Authors){
-        isbn = Isbn;
-        title = Title;
-        description = Description;
-        numOfPages = NumOfPages;
-        authors = Authors;
+    public Book(String isbn, String title, String description, int numOfPages, List<String> authors){
+        setIsbn(isbn);
+        setTitle(title);
+        setDescription(description);
+        setNumOfPages(numOfPages);
+        setAuthors(authors);
     }
 
     public String getIsbn(){
@@ -63,8 +62,13 @@ public class Book {
 
     @Override
     public String toString(){
-        String template = "Book{isbn=%s, title=%s, description=%s, numOfPages=%s, authors=%s}";
-        String output = String.format(template, getIsbn(), getTitle(), getDescription(), getNumOfPages(), getAuthors().toString());
-        return output;
+        if (getAuthors()==null){
+            return "Book{null}";
+        }
+        else {
+            String template = "Book{isbn=%s, title=%s, description=%s, numOfPages=%d, authors=%s}";
+            String output = String.format(template, getIsbn(), getTitle(), getDescription(), getNumOfPages(), getAuthors().toString());
+            return output;
+        }
     }
 }
