@@ -7,13 +7,16 @@ import org.springframework.data.annotation.Id;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
+
 public class WishlistItem {
     @NotNull
     @NotEmpty(message="ISBN is a required field.")
     private String isbn;
+
     @NotNull
     @NotEmpty(message="Title is a required field.")
     private String title;
+    
     @Id
     private String id;
 

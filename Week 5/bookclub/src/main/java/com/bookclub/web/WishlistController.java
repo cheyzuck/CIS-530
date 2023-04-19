@@ -38,7 +38,7 @@ public class WishlistController {
     @RequestMapping(method = RequestMethod.GET, path = "/new")
     public String wishlistForm(Model model){
 
-        model.addAttribute("wishlist item", new WishlistItem());
+        model.addAttribute("wishlistItem", new WishlistItem());
         return "wishlist/new";
     }
 
