@@ -4,7 +4,7 @@
 FROM eclipse-temurin:17-jdk-jammy
 ENV SPRING_PROFILES_ACTIVE docker
 VOLUME /tmp
-ARG JAR_FILE=target/bookclub.jar
+ARG JAR_FILE
 COPY ${JAR_FILE} /bookclub.jar
 EXPOSE 8080
 ENTRYPOINT ["java",\
