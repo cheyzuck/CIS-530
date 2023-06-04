@@ -9,4 +9,4 @@ COPY ${JAR_FILE} /bookclub.jar
 ENTRYPOINT ["java",\
             "-Djava.security.egd=file:/dev/./urandom",\
             "-jar",\
-            "/bookclub.jar"]
+            "bookclub.jar"]
