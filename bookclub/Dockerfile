@@ -1,11 +1,12 @@
-# syntax=docker/dockerfile:1
-
-FROM eclipse-temurin:17-jdk-jammy
-WORKDIR /bookclub
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-
-RUN ./mvnw dependency:resolve
-COPY src ./src
-
-CMD ["./mvnw", "spring-boot:run"]
+#
+#
+#
+FROM openjdk:8-jdk-alpine
+ENV SPRING_PROFILES_ACTIVE docker
+VOLUME /tmp
+ARG JAR_FILE
+COPY ${JAR_FILE} bookclub.jar
+ENTRYPOINT ["java", \
+            "-Djava.security.egd=file:/dev/./urandom", \
+            "-jar", \
+            "/bookclub.jar"]
